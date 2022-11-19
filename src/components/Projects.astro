@@ -1,0 +1,13 @@
+---
+import Project from "./Project.astro"
+
+import { projects } from "../data/projects"
+---
+
+<section
+  id="projects"
+  class="flex mx-auto intersection max-w-[20rem] flex-col items-center justify-center gap-11 pt-20 lg:max-w-[50rem] lg:gap-0 lg:pt-28"
+>
+  <h1 data-name="projects" class="text-3xl lg:text-4xl">Projects</h1>
+  {projects.map((project, index) => <Project {...project} index={index} />)}
+</section>

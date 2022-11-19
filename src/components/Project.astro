@@ -1,0 +1,62 @@
+---
+const { description, technologies, imgsrc, codeURL, previewURL, index } =
+  Astro.props
+---
+
+<div class="flex flex-col gap-3 pt-6 lg:flex-row lg:gap-0 lg:pt-24">
+  <div class="flex flex-col gap-3 lg:order-2 lg:w-[25rem] lg:gap-0">
+    <div class="flex items-center lg:h-40 lg:px-3">
+      <p class="lg:text-lg">
+        {description}
+      </p>
+    </div>
+    <div class="flex items-center lg:h-12 lg:pl-3">
+      <p
+        class="font-titillium word-spacing-1 text-secondary lg:text-lg lg:tracking-wide"
+      >
+        {technologies}
+      </p>
+    </div>
+  </div>
+  <div
+    class={`flex w-64 gap-5 lg:w-[25rem] lg:flex-col lg:justify-center lg:gap-0 ${
+      index % 2 === 0 && "lg:order-2"
+    }`}
+  >
+    <img class="hidden h-40 w-[25rem] lg:block" src={imgsrc} />
+    <div
+      class="lg:bg-footer flex items-center gap-6 lg:h-10 lg:justify-center lg:text-base"
+    >
+      <a href={codeURL} target="_blank">
+        <span class="flex items-center gap-1 lg:gap-2">
+          <svg
+            class="fill-primary h-6 w-6 lg:h-7 lg:w-7"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z"
+            ></path>
+          </svg>
+          <span>code</span>
+        </span>
+      </a>
+      {
+        previewURL && (
+          <a href={previewURL} target="_blank">
+            <span class="flex items-center gap-1 lg:gap-2">
+              <svg
+                class="fill-primary h-4 w-4 lg:h-5 lg:w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z" />
+              </svg>
+              <span>live preview</span>
+            </span>
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>

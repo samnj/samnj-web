@@ -1,0 +1,14 @@
+---
+import Head from "../components/Head.astro"
+import Navbar from "../components/Navbar.astro"
+---
+
+<html class="scroll-smooth" lang="en">
+  <Head />
+  <body class="bg-background text-primary font-fira">
+    <div class="mx-auto">
+      <Navbar />
+      <slot />
+    </div>
+  </body>
+</html>
