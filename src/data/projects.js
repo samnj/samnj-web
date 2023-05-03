@@ -9,7 +9,7 @@ const livenberg = {
 
 const whiteboard = {
   description: "A simple canvas whiteboard. Work in progress.",
-  technologies: "typescript react tailwindcss",
+  technologies: "typescript react tailwindcss zustand",
   imgsrc: "/assets/whiteboardImg.png",
   codeURL: "https://github.com/samnj/whiteboard-ts",
   previewURL: "https://whiteboard-ts.vercel.app/",
