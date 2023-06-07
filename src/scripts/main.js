@@ -17,7 +17,6 @@ const handleHighlight = (dataName) => {
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      console.log(entry)
       handleHighlight(entry.target.id)
     }
   })
